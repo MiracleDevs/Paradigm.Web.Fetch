@@ -1,4 +1,10 @@
+export { HttpHeaders } from "./http-headers";
 export { HttpRequest } from "./http-request";
-export { HttpClient } from "./http-client";
+export { HttpResponse } from "./http-response";
 export { IHttpInterceptor } from "./interceptors/http-interceptor.interface";
+export { AddHeaderInterceptor } from "./interceptors/add-header.interceptor";
 export { ContentTypeInterceptor } from "./interceptors/content-type.interceptor";
+export { AuthorizationInterceptor } from "./interceptors/authorization.interceptor";
+export { IFetcher } from './fetchers/fetcher.interface';
+export { WebFetcher } from './fetchers/web.fetcher';
+export { HttpClient } from "./http-client";

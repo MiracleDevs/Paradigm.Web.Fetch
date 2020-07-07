@@ -84,11 +84,13 @@ describe("HttpClient", () =>
         const response = await httpClient.request(request);
 
         expect(response).not.toBeNull();
+        expect(response.url).toBe('https://google.com');
         expect(response.status).toBe(200);
         expect(response.statusText).toBe('OK');
         expect(response.ok).toBe(true);
         expect(response.redirected).toBe(false);
         expect(response.headers).toHaveLength(1);
+        expect(response.trailer).resolves.toHaveLength(1);
         expect(response.type).toBe('default');
         expect(response.request).toBe(request);
         expect(response.json()).resolves.not.toBeNull();

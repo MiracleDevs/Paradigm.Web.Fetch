@@ -1,5 +1,5 @@
-import { HttpRequest } from "./http-request";
-import { HttpResponse } from "./http-response";
+import { HttpRequest } from "../http-request";
+import { HttpResponse } from "../http-response";
 
 export interface IFetcher
 {

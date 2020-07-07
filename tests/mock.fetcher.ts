@@ -8,6 +8,7 @@ export class MockFetcher implements IFetcher
         status: number,
         statusText: string,
         headers: string[][],
+        trailer: string[][],
         ok: boolean,
         redirected: boolean,
         type: ResponseType
@@ -15,6 +16,7 @@ export class MockFetcher implements IFetcher
             status: 200,
             statusText: 'OK',
             headers: [['header', 'value']],
+            trailer: [['header', 'value']],
             ok: true,
             redirected: false,
             type: 'default'
@@ -29,6 +31,7 @@ export class MockFetcher implements IFetcher
             status: this.parameters.status,
             statusText: this.parameters.statusText,
             headers: this.parameters.headers,
+            trailer: new Promise(r => r(this.parameters.trailer)),
             ok: this.parameters.ok,
             redirected: this.parameters.redirected,
             type: this.parameters.type,
