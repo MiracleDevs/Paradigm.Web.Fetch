@@ -39,6 +39,7 @@
     "homepage": "https://github.com/MiracleDevs/Paradigm.Web.Fetch#readme",
     "devDependencies": {
         "@types/jest": "^26.0.3",
+        "@types/node-fetch": "^2.5.7",
         "jest": "^26.1.0",
         "ts-jest": "^26.1.1",
         "typescript": "^3.9.6"

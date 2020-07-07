@@ -1,4 +1,6 @@
-export class HttpRequest implements RequestInit
+import { HttpHeaders } from "./http-headers";
+
+export class HttpRequest
 {
     /**
     * A BodyInit object or null to set request's body.
@@ -18,7 +20,7 @@ export class HttpRequest implements RequestInit
     /**
      * A Headers object, an object literal, or an array of two-item arrays to set request's headers.
      */
-    headers?: HeadersInit;
+    headers: HttpHeaders;
 
     /**
      * A cryptographic hash of the resource to be fetched by request. Sets request's integrity.
@@ -65,12 +67,8 @@ export class HttpRequest implements RequestInit
      */
     window?: any;
 
-    constructor(private requestInfo: RequestInfo)
+    constructor(public readonly url: string)
     {
-    }
-
-    makeRequest(): Request
-    {
-        return new Request(this.requestInfo, this);
+        this.headers = new HttpHeaders();
     }
 }

@@ -1,5 +1,35 @@
 import { HttpRequest } from "./http-request";
 
+export interface IResponse {
+    status: number;
+
+    statusText: string;
+
+    headers: Headers | any;
+
+    trailer?: Promise<Headers | any>;
+
+    ok: boolean;
+
+    redirected: boolean;
+
+    type: ResponseType;
+
+    url: string;
+
+    json(): Promise<any>;
+
+    text(): Promise<string>;
+
+    arrayBuffer(): Promise<ArrayBuffer>;
+
+    formData?(): Promise<FormData>;
+
+    blob(): Promise<Blob | any>;
+
+    clone(): any;
+}
+
 export class HttpResponse
 {
     get status(): number { return this.response.status; }
@@ -19,7 +49,7 @@ export class HttpResponse
     get url(): string { return this.response.url; }
 
     constructor(
-        public readonly response: Response,
+        public readonly response: IResponse,
         public readonly request: HttpRequest)
     {
     }

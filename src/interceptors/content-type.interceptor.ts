@@ -1,15 +1,9 @@
-import { IHttpInterceptor } from "./http-interceptor.interface";
-import { HttpRequest } from "../http-request";
+import { AddHeaderInterceptor } from "./add-header.interceptor";
 
-export class ContentTypeInterceptor implements IHttpInterceptor
+export class ContentTypeInterceptor extends AddHeaderInterceptor
 {
-    constructor(private contentType: string)
+    constructor(mimeType: string)
     {
+        super('Content-Type', mimeType);
     }
-
-    beforeSend(request: HttpRequest): HttpRequest
-    {
-        return request;
-    }
-
 }
