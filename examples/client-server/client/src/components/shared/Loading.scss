@@ -1,0 +1,62 @@
+$size: 6px;
+$selected-color: #2B83FF;
+
+.loading {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    .dots {
+        position: absolute;
+
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        background-color: $selected-color;
+        animation: growDot 1s linear .15s infinite;
+
+        &:before {
+            position: absolute;
+            left: -$size * 2;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            background-color: $selected-color;
+            animation: growDot 1s linear 0s infinite;
+            content: '';
+        }
+
+        &:after {
+            position: absolute;
+            left: $size * 2;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            background-color: $selected-color;
+            animation: growDot 1s linear .30s infinite;
+            content: '';
+        }
+    }
+}
+@keyframes growDot {
+    0% {
+        opacity: .7;
+        background-color: $selected-color;
+        box-shadow: 0 0 0 0 $selected-color;
+    }
+
+    25% {
+        opacity: 1.0;
+        box-shadow: 0 0 0 4px $selected-color;
+    }
+
+    50% {
+        opacity: .7;
+        box-shadow: 0 0 0 0 $selected-color;
+    }
+
+    100% {
+        opacity: (0.6);
+        box-shadow: 0 0 0 0 $selected-color;
+    }
+}

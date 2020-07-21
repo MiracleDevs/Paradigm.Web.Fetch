@@ -1,5 +1,5 @@
 {
-    "name": "@miracledevs/paradgim-web-fetch",
+    "name": "@miracledevs/paradigm-web-fetch",
     "version": "1.0.0",
     "description": "A small wrapper around the fetch api to ease the work with web pages and web applications.",
     "main": "./index.js",

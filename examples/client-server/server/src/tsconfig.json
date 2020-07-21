@@ -4,19 +4,23 @@
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
+        "resolveJsonModule": true,
         "target": "es6",
         "noImplicitAny": true,
         "moduleResolution": "node",
         "sourceMap": true,
-        "outDir": "./out-tsc/tests/",
+        "outDir": "../dist",
         "baseUrl": ".",
         "paths": {
             "*": [
-                "node_modules/*"
+                "../node_modules/*"
             ]
         }
     },
     "include": [
+        "./**/*.ts"
+    ],
+    "exclude": [
         "./**/*.test.ts"
     ]
 }

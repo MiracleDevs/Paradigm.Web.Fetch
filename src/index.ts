@@ -8,3 +8,4 @@ export { AuthorizationInterceptor } from "./interceptors/authorization.intercept
 export { IFetcher } from './fetchers/fetcher.interface';
 export { WebFetcher } from './fetchers/web.fetcher';
 export { HttpClient } from "./http-client";
+export { QueryString } from "./http-client";
