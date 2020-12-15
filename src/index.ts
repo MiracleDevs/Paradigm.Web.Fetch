@@ -7,5 +7,6 @@ export { ContentTypeInterceptor } from "./interceptors/content-type.interceptor"
 export { AuthorizationInterceptor } from "./interceptors/authorization.interceptor";
 export { IFetcher } from './fetchers/fetcher.interface';
 export { WebFetcher } from './fetchers/web.fetcher';
+export { NodeFetcher } from './fetchers/node.fetcher';
 export { HttpClient } from "./http-client";
 export { QueryString } from "./http-client";
