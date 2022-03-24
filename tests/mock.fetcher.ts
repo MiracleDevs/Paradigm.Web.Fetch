@@ -38,8 +38,8 @@ export class MockFetcher implements IFetcher
             json: async () => { },
             text: async () => '',
             arrayBuffer: async () => new ArrayBuffer(1),
-            formData: async () => null,
-            blob: async () => null,
+            formData: async () => null as any,
+            blob: async () => null as any,
             clone: () => { }
         }, request);
     }

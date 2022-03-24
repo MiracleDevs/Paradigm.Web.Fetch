@@ -169,7 +169,7 @@ export class HttpClient
         return url;
     }
 
-    private getStringValue(value: any): string
+    private getStringValue(value: any): string | null
     {
         if (value === null || value === undefined)
         {

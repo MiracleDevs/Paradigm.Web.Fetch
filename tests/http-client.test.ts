@@ -29,8 +29,8 @@ describe("HttpClient", () =>
     it("should fail if interceptor is null or undefined", () =>
     {
         const httpClient = new HttpClient();
-        expect(()=> httpClient.registerInterceptor(null)).toThrowError("The interceptor can not be null or undefined.");
-        expect(()=> httpClient.registerInterceptor(undefined)).toThrowError("The interceptor can not be null or undefined.");
+        expect(()=> httpClient.registerInterceptor(null as any)).toThrowError("The interceptor can not be null or undefined.");
+        expect(()=> httpClient.registerInterceptor(undefined as any)).toThrowError("The interceptor can not be null or undefined.");
     });
 
     it("should allow to remove interceptors", () =>
@@ -56,8 +56,8 @@ describe("HttpClient", () =>
     {
         const httpClient = new HttpClient();
         expect(()=> httpClient.removeInterceptor(new ContentTypeInterceptor('application/json'))).toThrowError("The interceptor does not belong to the http client and can not be removed.");
-        expect(()=> httpClient.removeInterceptor(undefined)).toThrowError("The interceptor does not belong to the http client and can not be removed.");
-        expect(()=> httpClient.removeInterceptor(null)).toThrowError("The interceptor does not belong to the http client and can not be removed.");
+        expect(()=> httpClient.removeInterceptor(undefined as any)).toThrowError("The interceptor does not belong to the http client and can not be removed.");
+        expect(()=> httpClient.removeInterceptor(null as any)).toThrowError("The interceptor does not belong to the http client and can not be removed.");
     });
 
     it("should allow to customize the fetcher", () =>
@@ -104,8 +104,8 @@ describe("HttpClient", () =>
     it("should fail if request is null or undefined", () =>
     {
         const httpClient = new HttpClient();
-        expect(()=> httpClient.request(null)).rejects.toThrowError("The request can not be null or undefined.");
-        expect(()=> httpClient.request(undefined)).rejects.toThrowError("The request can not be null or undefined.");
+        expect(()=> httpClient.request(null as any)).rejects.toThrowError("The request can not be null or undefined.");
+        expect(()=> httpClient.request(undefined as any)).rejects.toThrowError("The request can not be null or undefined.");
     });
 
     it("should make get request", async () =>
@@ -132,7 +132,7 @@ describe("HttpClient", () =>
     {
         const httpClient = new HttpClient();
         httpClient.setFetcher(new MockFetcher());
-        const response = await httpClient.post('https://google.com', null, 'body');
+        const response = await httpClient.post('https://google.com', null as any, 'body');
 
         expect(response.request.url).toBe('https://google.com');
         expect(response.request.method).toBe('POST');
@@ -143,7 +143,7 @@ describe("HttpClient", () =>
     {
         const httpClient = new HttpClient();
         httpClient.setFetcher(new MockFetcher());
-        const response = await httpClient.put('https://google.com', null, 'body');
+        const response = await httpClient.put('https://google.com', null as any, 'body');
 
         expect(response.request.url).toBe('https://google.com');
         expect(response.request.method).toBe('PUT');
@@ -154,7 +154,7 @@ describe("HttpClient", () =>
     {
         const httpClient = new HttpClient();
         httpClient.setFetcher(new MockFetcher());
-        const response = await httpClient.patch('https://google.com', null, 'body');
+        const response = await httpClient.patch('https://google.com', null as any, 'body');
 
         expect(response.request.url).toBe('https://google.com');
         expect(response.request.method).toBe('PATCH');
