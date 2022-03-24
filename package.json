@@ -14,7 +14,7 @@
     "build-publish": "npm run build && npm run copy-readme && npm run copy-package && npm run copy-source",
     "copy-readme": "cp ./readme.md ./dist/",
     "copy-package": "cp ./package.json ./dist/",
-    "copy-source": "cp r ./src/* ./dist/"
+    "copy-source": "cp -r ./src/* ./dist/"
   },
   "repository": {
     "type": "git",
