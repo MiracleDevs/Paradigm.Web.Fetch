@@ -1,13 +1,11 @@
 import { Controller, ApiController, Action } from "@miracledevs/paradigm-express-webapi";
 import { User } from "../models/user";
 
-@Controller({ route: '/api/users' })
-export class UserController extends ApiController
-{
+@Controller({ route: "/api/users" })
+export class UserController extends ApiController {
     private users: User[];
 
-    constructor()
-    {
+    constructor() {
         super();
         this.users = [
             {
@@ -16,7 +14,7 @@ export class UserController extends ApiController
                 lastName: "Mathis",
                 registrationDate: new Date("2012-01-01"),
                 age: 70,
-                isBlocked: false
+                isBlocked: false,
             },
             {
                 id: 2,
@@ -24,7 +22,7 @@ export class UserController extends ApiController
                 lastName: "Devons",
                 registrationDate: new Date("2013-01-01"),
                 age: 43,
-                isBlocked: false
+                isBlocked: false,
             },
             {
                 id: 3,
@@ -32,7 +30,7 @@ export class UserController extends ApiController
                 lastName: "Shore",
                 registrationDate: new Date("2011-04-12"),
                 age: 34,
-                isBlocked: true
+                isBlocked: true,
             },
             {
                 id: 4,
@@ -40,7 +38,7 @@ export class UserController extends ApiController
                 lastName: "Crowford",
                 registrationDate: new Date("2012-01-01"),
                 age: 55,
-                isBlocked: false
+                isBlocked: false,
             },
             {
                 id: 5,
@@ -48,39 +46,32 @@ export class UserController extends ApiController
                 lastName: "Hopkins",
                 registrationDate: new Date("2010-07-09"),
                 age: 28,
-                isBlocked: true
+                isBlocked: true,
             },
         ];
     }
 
     @Action()
-    get(): User[]
-    {
+    get(): User[] {
         return this.users;
     }
 
     @Action({ route: ":id" })
-    getById(id: number): User
-    {
+    getById(id: number): User {
         const user = this.users.find(x => x.id === id);
 
-        if (!user)
-            throw new Error("The user does not exist.");
+        if (!user) throw new Error("The user does not exist.");
 
         return user;
     }
 
     @Action({ fromBody: true })
-    post(user: User): User
-    {
-        if (!user)
-            throw new Error("The user can not be null");
+    post(user: User): User {
+        if (!user) throw new Error("The user can not be null");
 
-        if (!user.firstName)
-            throw new Error("The first name of an user is mandatory.");
+        if (!user.firstName) throw new Error("The first name of an user is mandatory.");
 
-        if (!user.lastName)
-            throw new Error("The last name of an user is mandatory.");
+        if (!user.lastName) throw new Error("The last name of an user is mandatory.");
 
         user.registrationDate = new Date();
         user.isBlocked = false;
@@ -91,21 +82,16 @@ export class UserController extends ApiController
     }
 
     @Action({ fromBody: true })
-    put(user: User): User
-    {
-        if (!user)
-            throw new Error("The user can not be null");
+    put(user: User): User {
+        if (!user) throw new Error("The user can not be null");
 
         const existingUser = this.users.find(x => x.id === user.id);
 
-        if (!existingUser)
-            throw new Error("The user does not exist.");
+        if (!existingUser) throw new Error("The user does not exist.");
 
-        if (!user.firstName)
-            throw new Error("The first name of an user is mandatory.");
+        if (!user.firstName) throw new Error("The first name of an user is mandatory.");
 
-        if (!user.lastName)
-            throw new Error("The last name of an user is mandatory.");
+        if (!user.lastName) throw new Error("The last name of an user is mandatory.");
 
         existingUser.firstName = user.firstName;
         existingUser.lastName = user.lastName;
@@ -114,8 +100,7 @@ export class UserController extends ApiController
     }
 
     @Action({ route: ":id" })
-    delete(id: number): void
-    {
+    delete(id: number): void {
         const user = this.getById(id);
         const index = this.users.indexOf(user);
         this.users.splice(index, 1);

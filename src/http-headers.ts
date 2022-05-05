@@ -1,43 +1,34 @@
 type HeaderDictionary = { [key: string]: string };
 
-export class HttpHeaders
-{
+export class HttpHeaders {
     private headers: HeaderDictionary;
 
-    constructor()
-    {
+    constructor() {
         this.headers = {};
     }
 
-    set(key: string, value: string): void
-    {
+    set(key: string, value: string): void {
         this.headers[key] = value;
     }
 
-    has(key: string): boolean
-    {
+    has(key: string): boolean {
         return this.headers.hasOwnProperty(key);
     }
 
-    get(key: string): string
-    {
+    get(key: string): string {
         return this.headers[key];
     }
 
-    remove(key: string): void
-    {
-        if (!this.has(key))
-            throw new Error('They key was not present in the headers dictionary.');
+    remove(key: string): void {
+        if (!this.has(key)) throw new Error("They key was not present in the headers dictionary.");
 
         delete this.headers[key];
     }
 
-    toArray(): string[][]
-    {
+    toArray(): string[][] {
         const result = [];
 
-        for (const key in this.headers)
-        {
+        for (const key in this.headers) {
             result.push([key, this.headers[key]]);
         }
 

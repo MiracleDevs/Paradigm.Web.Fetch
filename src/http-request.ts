@@ -1,10 +1,9 @@
 import { HttpHeaders } from "./http-headers";
 
-export class HttpRequest
-{
+export class HttpRequest {
     /**
-    * A BodyInit object or null to set request's body.
-    */
+     * A BodyInit object or null to set request's body.
+     */
     body?: BodyInit | null;
 
     /**
@@ -67,8 +66,7 @@ export class HttpRequest
      */
     window?: any;
 
-    constructor(public readonly url: string)
-    {
+    constructor(public readonly url: string) {
         this.headers = new HttpHeaders();
     }
 }

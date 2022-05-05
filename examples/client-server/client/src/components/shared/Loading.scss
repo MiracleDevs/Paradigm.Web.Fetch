@@ -1,5 +1,5 @@
 $size: 6px;
-$selected-color: #2B83FF;
+$selected-color: #2b83ff;
 
 .loading {
     display: inline-block;
@@ -13,7 +13,7 @@ $selected-color: #2B83FF;
         height: $size;
         border-radius: 50%;
         background-color: $selected-color;
-        animation: growDot 1s linear .15s infinite;
+        animation: growDot 1s linear 0.15s infinite;
 
         &:before {
             position: absolute;
@@ -23,7 +23,7 @@ $selected-color: #2B83FF;
             border-radius: 50%;
             background-color: $selected-color;
             animation: growDot 1s linear 0s infinite;
-            content: '';
+            content: "";
         }
 
         &:after {
@@ -33,25 +33,25 @@ $selected-color: #2B83FF;
             height: $size;
             border-radius: 50%;
             background-color: $selected-color;
-            animation: growDot 1s linear .30s infinite;
-            content: '';
+            animation: growDot 1s linear 0.3s infinite;
+            content: "";
         }
     }
 }
 @keyframes growDot {
     0% {
-        opacity: .7;
+        opacity: 0.7;
         background-color: $selected-color;
         box-shadow: 0 0 0 0 $selected-color;
     }
 
     25% {
-        opacity: 1.0;
+        opacity: 1;
         box-shadow: 0 0 0 4px $selected-color;
     }
 
     50% {
-        opacity: .7;
+        opacity: 0.7;
         box-shadow: 0 0 0 0 $selected-color;
     }
 
