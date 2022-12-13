@@ -17,7 +17,7 @@
         "@miracledevs/paradigm-express-webapi": "^1.1.2",
         "@miracledevs/paradigm-web-di": "^1.0.2",
         "cors": "^2.8.5",
-        "express": "^4.17.1"
+        "express": "^4.17.3"
     },
     "devDependencies": {
         "@types/cors": "^2.8.6",
