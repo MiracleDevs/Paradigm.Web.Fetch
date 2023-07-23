@@ -25,13 +25,11 @@ export class HttpHeaders {
         delete this.headers[key];
     }
 
-    toArray(): string[][] {
-        const result = [];
-
+    toArray(): [string, string][] {
+        const result: [string, string][] = [];
         for (const key in this.headers) {
             result.push([key, this.headers[key]]);
         }
-
         return result;
     }
 }

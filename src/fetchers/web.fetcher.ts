@@ -6,7 +6,7 @@ export class WebFetcher implements IFetcher {
     async fetch(request: HttpRequest): Promise<HttpResponse> {
         if (window === null || window === undefined)
             throw new Error(
-                "Unable to find the fetch method. If the intension is to use the library on different platform than the web, you can implement a IFetcher with node-fetch."
+                "Unable to find the fetch method. If the intension is to use the library on different platform than the web, you can implement a IFetcher."
             );
 
         return new HttpResponse(

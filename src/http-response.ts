@@ -63,7 +63,10 @@ export class HttpResponse {
         return this.response.url;
     }
 
-    constructor(public readonly response: IResponse, public readonly request: HttpRequest) {}
+    constructor(
+        public readonly response: IResponse,
+        public readonly request: HttpRequest
+    ) {}
 
     async json(): Promise<any> {
         return await this.response.json();
