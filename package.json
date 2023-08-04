@@ -1,6 +1,6 @@
 {
     "name": "@miracledevs/paradigm-web-fetch",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "description": "A small wrapper around the fetch api to ease the work with web pages and web applications.",
     "main": "./index.js",
     "types": "./index.d.ts",
