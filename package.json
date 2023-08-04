@@ -16,7 +16,8 @@
         "copy-readme": "cp ./readme.md ./dist/",
         "copy-package": "cp ./package.json ./dist/",
         "copy-source": "cp -r ./src/* ./dist/",
-        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss,html}\""
+        "format": "prettier --write .",
+        "check-format": "prettier --check ."
     },
     "repository": {
         "type": "git",
