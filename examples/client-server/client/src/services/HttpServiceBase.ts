@@ -2,7 +2,10 @@ import { HttpClient } from "../library/dist/http-client";
 import { QueryString } from "../library/dist/http-client";
 
 export class HttpServiceBase {
-    constructor(private readonly httpClient: HttpClient, private readonly baseUrl: string) {}
+    constructor(
+        private readonly httpClient: HttpClient,
+        private readonly baseUrl: string
+    ) {}
 
     protected async get<T>(url?: string, queryString?: QueryString): Promise<T> {
         const response = await this.httpClient.get(`${this.baseUrl}/${url}`, queryString);

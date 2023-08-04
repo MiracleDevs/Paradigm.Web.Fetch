@@ -2,13 +2,13 @@
 
 A small wrapper around the fetch api to ease the work with web pages and web applications.
 
-# Installing
+## Installing
 
 ```shell
-$ npm i @miracledevs/paradigm-web-fetch
+npm i @miracledevs/paradigm-web-fetch
 ```
 
-# How to use
+## How to use
 
 This library is a small wrapper on top of the fetch api, that abstract some of the concepts and allow to use the same code both in the web and in node.js.
 The code also allows the user to configure interceptors to transform or audit both the request and the response.
@@ -46,7 +46,7 @@ httpClient.registerInterceptor(new AuthorizationInterceptor("[my auth token]"));
 
 After registering the interceptors, all the requests originated from `httpClient`, will execute both interceptors before executing the request. In this case, two headers will be added:
 
-```
+```text
 Content-Type: application/json
 x-auth: [my auth token]
 ```
@@ -55,7 +55,10 @@ Making interceptors is really easy to accomplish. Both `ContentTypeInterceptor` 
 
 ```typescript
 export class AddHeaderInterceptor implements IHttpInterceptor {
-    constructor(private readonly header: string, private readonly value: string) {}
+    constructor(
+        private readonly header: string,
+        private readonly value: string
+    ) {}
 
     beforeSend(request: HttpRequest): HttpRequest {
         request.headers.set(this.header, this.value);
@@ -71,7 +74,7 @@ beforeSend(request: HttpRequest): Promise<HttpRequest> | HttpRequest
 {
 }
 
-afterReceive(response: HttpResponse): Promise<HttpResponse> |HttpResponse
+afterReceive(response: HttpResponse): Promise<HttpResponse> | HttpResponse
 {
 }
 ```
@@ -87,7 +90,7 @@ export class LogResponsesInterceptor implements IHttpInterceptor {
 }
 ```
 
-# Building and Testing
+## Building and Testing
 
 To build the library:
 
