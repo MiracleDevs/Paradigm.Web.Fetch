@@ -54,5 +54,8 @@
     "directories": {
         "example": "examples",
         "test": "tests"
+    },
+    "engines": {
+        "node": ">=18"
     }
 }
