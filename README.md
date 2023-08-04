@@ -1,4 +1,6 @@
-# Paradigm.Web.Fetch [![Build Status](https://travis-ci.org/MiracleDevs/Paradigm.Web.Fetch.svg?branch=master)](https://travis-ci.org/MiracleDevs/Paradigm.Web.Fetch)
+# Paradigm.Web.Fetch
+
+[![Paradigm Web Fetch](https://github.com/MiracleDevs/Paradigm.Web.Fetch/actions/workflows/build-and-test.yml/badge.svg?branch=main)](https://github.com/MiracleDevs/Paradigm.Web.Fetch/actions/workflows/build-and-test.yml)
 
 A small wrapper around the fetch api to ease the work with web pages and web applications.
 
@@ -95,41 +97,41 @@ export class LogResponsesInterceptor implements IHttpInterceptor {
 To build the library:
 
 ```shell
-$ npm run build
+npm run build
 ```
 
 To watch-build the library:
 
 ```shell
-$ npm run watch
+npm run watch
 ```
 
 To watch for changes and build after every change:
 
 ```shell
-$ npm run watch
+npm run watch
 ```
 
 To test the solution:
 
 ```shell
-$ npm run test
+npm run test
 ```
 
 To watch-test the solution:
 
 ```shell
-$ npm run watch-test
+npm run watch-test
 ```
 
 To see the test coverage:
 
 ```shell
-$ npm run coverage
+npm run coverage
 ```
 
 To see the test coverage and watch for changes:
 
 ```shell
-$ npm run watch-coverage
+npm run watch-coverage
 ```

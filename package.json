@@ -6,6 +6,7 @@
     "types": "./index.d.ts",
     "scripts": {
         "test": "jest",
+        "ci-test": "jest --coverage --detectOpenHandles --silent",
         "coverage": "jest --coverage",
         "watch-test": "jest --watch",
         "watch-coverage": "jest --coverage --watch",
