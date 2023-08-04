@@ -1,6 +1,6 @@
 # Paradigm.Web.Fetch
 
-[![Paradigm Web Fetch](https://github.com/MiracleDevs/Paradigm.Web.Fetch/actions/workflows/build-and-test.yml/badge.svg?branch=main)](https://github.com/MiracleDevs/Paradigm.Web.Fetch/actions/workflows/build-and-test.yml)
+[![Paradigm Web Fetch](https://github.com/MiracleDevs/Paradigm.Web.Fetch/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/MiracleDevs/Paradigm.Web.Fetch/actions/workflows/build-and-test.yml)
 
 A small wrapper around the fetch api to ease the work with web pages and web applications.
 
