@@ -4,7 +4,7 @@ import { HttpResponse } from "./http-response";
 import { IFetcher } from "./fetchers/fetcher.interface";
 import { WebFetcher } from "./fetchers/web.fetcher";
 
-export type QueryString = { [key: string]: any };
+export type QueryString = { [key: string]: unknown };
 
 export class HttpClient {
     private interceptors: IHttpInterceptor[];
@@ -126,7 +126,7 @@ export class HttpClient {
     }
 
     async delete(url: string, queryString?: QueryString): Promise<HttpResponse> {
-        var request = new HttpRequest(this.getUrl(url, queryString));
+        const request = new HttpRequest(this.getUrl(url, queryString));
         request.method = "DELETE";
         return await this.request(request);
     }

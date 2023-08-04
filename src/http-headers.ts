@@ -12,7 +12,7 @@ export class HttpHeaders {
     }
 
     has(key: string): boolean {
-        return this.headers.hasOwnProperty(key);
+        return Object.hasOwnProperty.call(this.headers, key);
     }
 
     get(key: string): string {
@@ -27,9 +27,11 @@ export class HttpHeaders {
 
     toArray(): [string, string][] {
         const result: [string, string][] = [];
+
         for (const key in this.headers) {
             result.push([key, this.headers[key]]);
         }
+
         return result;
     }
 }
