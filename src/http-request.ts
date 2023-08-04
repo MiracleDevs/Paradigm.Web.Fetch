@@ -59,7 +59,7 @@ export class HttpRequest {
     /**
      * An AbortSignal to set request's signal.
      */
-    signal?: AbortSignal | null;
+    signal?: any | null;
 
     /**
      * Can only be null. Used to disassociate request from any Window.
