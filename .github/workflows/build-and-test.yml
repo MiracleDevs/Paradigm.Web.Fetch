@@ -1,4 +1,4 @@
-name: Paradigm Koa WebApi
+name: Paradigm Web Fetch
 
 on:
     push:
