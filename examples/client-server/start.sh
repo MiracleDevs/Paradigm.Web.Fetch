@@ -21,7 +21,7 @@ message "---------------------------------------------------"
 message "Starting the server: "
 message "---------------------------------------------------"
 pushd "$CURRENT_PATH/server/" || error "Unable to change to the project folder."
-npm run start-server &
+npm install && npm run start-server &
 popd || error "Unable to get back to root folder."
 
 message "---------------------------------------------------"
